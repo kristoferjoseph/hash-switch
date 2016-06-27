@@ -1,5 +1,31 @@
 #hash-switch
-Object hash based switch pattern
+Object hash based switch pattern.
+This lib is made give you the same functionality as a `switch` statement but with a cleaner API.
+
+###Compare:
+```js
+switch(expression) {
+  case 'one':
+    return 'ONE';
+  break;
+  case 'two':
+    return 'TWO';
+  break;
+  default:
+    return 'DEFAULT';
+  break;
+}
+```
+
+###To:
+```js
+hs({
+  'one':function(){ return 'ONE' },
+  'two':function(){ return 'TWO' }
+},
+function() { return 'DEFAULT' })
+```
+For me the second example is a much more familiar syntax and meshes with my other JavaScript more naturally.
 
 ##Install
 `npm i hash-switch --save`
