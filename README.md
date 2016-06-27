@@ -1,6 +1,5 @@
 #hash-switch
-Object hash based switch pattern.
-This lib is made give you the same functionality as a `switch` statement but with a cleaner API.
+This lib is made to give you the same functionality as a `switch` statement but with a more natural API.
 
 ###Compare:
 ```js
