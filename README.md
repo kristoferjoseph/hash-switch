@@ -18,6 +18,6 @@ var hs = require('hash-switch')({
 hs('one') //ONE
 hs('two') //TWO
 /* You can pass an extra argument to the callback function like so */
-hs('three', 'FOUR') //THREE
+hs('three', 'FOUR') //THREE FOUR
 hs('nope') //DEFAULT
 ```
