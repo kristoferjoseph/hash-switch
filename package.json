@@ -1,6 +1,6 @@
 {
   "name": "hash-switch",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Switch pattern based on object hash",
   "main": "index.js",
   "scripts": {
