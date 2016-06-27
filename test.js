@@ -61,3 +61,18 @@ test('should register multipe action callbacks', function(t) {
   t.equal(hash('lazlo'), 'DUDE')
   t.equal(hash('foo'), 'FWEE')
 })
+
+test.only('should pass function arguments to callback', function(t) {
+  t.plan(1)
+  var hash = hs({
+      'yolo': function(arg1, arg2) {
+        return 'YOLO' + ' ' + arg1 + ' ' + arg2
+      }
+    },
+    function() {
+      return 'FWEE'
+    }
+  )
+  t.equal(hash('yolo', 'NOLO', 'HOLO'), 'YOLO NOLO HOLO')
+})
+
