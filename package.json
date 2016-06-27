@@ -1,0 +1,27 @@
+{
+  "name": "hashswitch",
+  "version": "1.0.0",
+  "description": "Object hash based switch pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristoferjoseph/hash-switch.git"
+  },
+  "keywords": [
+    "hash",
+    "switch",
+    "object"
+  ],
+  "author": "@dam",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kristoferjoseph/hash-switch/issues"
+  },
+  "homepage": "https://github.com/kristoferjoseph/hash-switch#readme",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}
