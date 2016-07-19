@@ -14,8 +14,7 @@ module.exports = function(actions, defaultCallback){
     })
   }
   return function(action) {
-     if (action && 
-         typeof action === 'string') {
+     if (typeof action === 'string') {
        var args = [].slice.call(arguments, 1)
        return (hash[action] || hash[DEFAULT_CALLBACK]).apply(this, args)
      } else {
