@@ -1,25 +1,13 @@
-var DEFAULT_CALLBACK = 'DEFAULT_CALLBACK'
-
-module.exports = function(actions, defaultCallback){
+module.exports = function hashswitch (actions, defaultCallback){
   var hash = {}
-  hash[DEFAULT_CALLBACK] = defaultCallback || function() {}  
-  if (actions) {
-    Object.keys(actions).forEach(function(action) {
-      if (typeof action === 'string' &&
-          typeof actions[action] === 'function') {
-        hash[action] = actions[action]
-      } else {
-        throw Error('Actions Object requires string keys and function values')
-      }
-    })
-  }
-  return function(action) {
-     if (typeof action === 'string') {
-       var args = [].slice.call(arguments, 1)
-       return (hash[action] || hash[DEFAULT_CALLBACK]).apply(this, args)
-     } else {
-       throw Error('requires an action string')
-     }
+  hash.DEFAULT_CALLBACK = defaultCallback || function () {}
+  actions && Object.keys(actions).forEach(function (action) {
+    ('string' === typeof action && 'function' === typeof actions[action]) ?
+    (hash[action] = actions[action]) :
+    console.log(action + ' should be a string and ' + actions[action] + ' should be a function.')
+  })
+  return function exectue (action) {
+   'string' !== typeof action && console.error(action + ' should be a string')
+    return (hash[action] || hash.DEFAULT_CALLBACK).apply(this, [].slice.call(arguments, 1))
   }
 }
-
