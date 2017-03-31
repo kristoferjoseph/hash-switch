@@ -1,7 +1,7 @@
-#hash-switch
+# hash-switch
 This lib is made to give you the same functionality as a `switch` statement but with a more natural API.
 
-###Compare:
+### Compare:
 ```js
 switch(expression) {
   case 'one':
@@ -16,7 +16,7 @@ switch(expression) {
 }
 ```
 
-###To:
+### To:
 ```js
 hs({
   'one':function(){ return 'ONE' },
@@ -26,10 +26,10 @@ function() { return 'DEFAULT' })
 ```
 For me the second example is a much more familiar syntax and meshes with my other JavaScript more naturally.
 
-##Install
+## Install
 `npm i hash-switch --save`
 
-##Usage
+## Usage
 ```js
 var hs = require('hash-switch')({
     'one': function() {return 'ONE'},
