@@ -40,8 +40,11 @@ test('should call action callback', function(t) {
 })
 
 test('should register multipe action callbacks', function(t) {
-  t.plan(4)
+  t.plan(5)
   var hash = hs({
+      1: function one () {
+        return 1
+      },
       'yolo': function() {
         return 'YOLO'
       },
@@ -56,6 +59,7 @@ test('should register multipe action callbacks', function(t) {
       return 'FWEE'
     }
   )
+  t.equal(hash(1), 1)
   t.equal(hash('yolo'), 'YOLO')
   t.equal(hash('enzo'), 'SUP')
   t.equal(hash('lazlo'), 'DUDE')
